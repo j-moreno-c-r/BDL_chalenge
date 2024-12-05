@@ -1,0 +1,10 @@
+{
+    "version": "04358394",
+    "depth": "00",
+    "fingerprint": "00000000",
+    "child_number": "00000000",
+    "chain_code": "3d01ecc02d581a06dd5afd3c0f2fb5f79462fa4a75b5bd870bbc89d5e0237f86",
+    "key_data": "005effc92a9e31ebd7c3d5748a7d4e9746a2d1757c5f7a725bb4b36b432af7bed2",
+    "checksum": "47b550ec",
+    "private_key": "043583940000000000000000003d01ecc02d581a06dd5afd3c0f2fb5f79462fa4a75b5bd870bbc89d5e0237f86005effc92a9e31ebd7c3d5748a7d4e9746a2d1757c5f7a725bb4b36b432af7bed247b550ec"
+}
