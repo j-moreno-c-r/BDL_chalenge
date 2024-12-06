@@ -4,6 +4,7 @@ from getpubfrompriv import priv_for_pub
 from deserialize_key import deserialize_in_json
 from priv_child import derive_priv_child
 from childs_priv_keys import get_wallet_privs
+from get_p2wpk_program import get_p2wpkh_program
 #wpkh(tprv8ZgxMBicQKsPdUpU7MYiBXtJ2Ss5h2hCjgra8YqdR1dvMWTCMHRmEtUVxp3GGKofZ6zAZNU1E5CkAB2P1QXFECC4QMsUDR1Gpe8zBXdWJm9/84h/1h/0h/0/*)#uadxj6umj
 
 
@@ -28,15 +29,15 @@ if __name__ == "__main__":
     parent_chain_code = bytes.fromhex(main_dict["chain_code"])
     #print(derive_priv_child(parent_private_key,parent_chain_code,index=0,hardened=True))
     
-    
     derivation_path = [
         (84 | BIP32_HARDENED, True),
         (0 | BIP32_HARDENED, True),
         (0 | BIP32_HARDENED, True)
     ]
 
-    print(get_wallet_privs(parent_private_key,parent_chain_code,derivation_path))
+    #print(get_wallet_privs(parent_private_key,parent_chain_code,derivation_path).hex)
 
+    print(get_p2wpkh_program(compressed_pub))
 
 
     
