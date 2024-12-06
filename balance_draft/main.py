@@ -10,7 +10,7 @@ if __name__ == "__main__":
     json_desereliazed = deserialize_in_json(all_bytes)
     main_dict = json.loads(json_desereliazed)
 
-    print(deserialize_in_json(all_bytes))
+    #print(deserialize_in_json(all_bytes))
     important_bytes=all_bytes[13:45]
 
     #print(len(important_bytes))

@@ -1,4 +1,5 @@
 import hashlib
+import hmac
 from ecdsa import SECP256k1, VerifyingKey, SigningKey
 
 def derive_priv_child(key: bytes, chaincode: bytes, index: int, hardened: bool) -> dict:
@@ -15,7 +16,7 @@ def derive_priv_child(key: bytes, chaincode: bytes, index: int, hardened: bool) 
         data = pub_key + index.to_bytes(4, 'big')
 
     # Perform HMAC-SHA512 to derive the child key and chain code
-    I = hashlib.hmac.new(chaincode, digestmod=hashlib.sha512).update(data).digest()
+    I = hmac.new(chaincode, data,  digestmod=hashlib.sha512).digest()
     
     # The first 32 bytes are the IL (child key)
     IL = I[:32]
