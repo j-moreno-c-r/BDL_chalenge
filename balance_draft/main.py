@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     #print(deserialize_in_json(all_bytes))
     important_bytes=all_bytes[13:45]
-
+    
     #print(len(important_bytes))
     compressed_pub = priv_for_pub(important_bytes)
     #print(compressed_pub.hex())
@@ -35,9 +35,17 @@ if __name__ == "__main__":
         (0 | BIP32_HARDENED, True)
     ]
 
-    #print(get_wallet_privs(parent_private_key,parent_chain_code,derivation_path).hex)
-
-    print(get_p2wpkh_program(compressed_pub))
+    #print(get_wallet_privs(parent_private_key,parent_chain_code,derivation_path))
+    privs = get_wallet_privs(parent_private_key,parent_chain_code,derivation_path)
+    print(privs)
+    pubs = []
+    
+    for c in privs:
+        #b=c[13:45]
+        pubs+=priv_for_pub(c)
+    #print(pubs)
+    
+    #print(get_p2wpkh_program(compressed_pub))
 
 
     
