@@ -1,0 +1,1 @@
+The things that i done in the BDL vinteum program in 2025, in the future i whant to reimplement the chalenges in other laguage probably Rust.
